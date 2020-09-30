@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+.text-align-center{
+    text-align: center;
+    
+}
+body{
+    background-color: rgb(26, 26, 27);
+}
+h1,h2,h3,h4{
+    color: orange;
+    
+}
+h1{font-size: 30px; font-weight: bold;}
+.param-box{
+    display: flex;
+    flex-direction: column;
+}
+#resTextArea{
+    background-color: black;
+    color: yellow;
+    min-height: 70%;
+}

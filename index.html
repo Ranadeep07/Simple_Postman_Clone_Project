@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/script.js"></script>
+    <title>Postman</title>
+    <link rel="shortcut icon" href="./download.png" type="image/x-icon">
+  </head>
+  <body>
+      <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" style="color: orange;" href="/">Home</a>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn my-2 my-sm-0" style="background-color: orange;" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container mx-2 my-2">
+        <!-- Header -->
+        <div style="display: flex;">
+            <img src="./download.png" height="30px" alt="" srcset="">
+            <h1 style="margin-left: 10px;">POSTMAN</h1>
+        </div>
+        <!-- User URL -->
+        <div class="container mx-4 my-4 user-form">
+            <form id="form">
+                <div class="form-group">
+                  <label for="apiURL" style="color: white;">Enter API URL:</label>
+                  <input type="text" class="form-control" id="apiURL" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" id="submitBtn" class="btn" style="background-color: orange;">Submit</button>
+            </form>
+              <!-- Get or Post Selection -->
+              <fieldset class="form-group my-4">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0" style="color: white;">Request Type:</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios1" id="get" value="GET" checked>
+                      <label class="form-check-label" style="color: white;" for="get">
+                        GET
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios1" id="post" value="POST">
+                      <label class="form-check-label" style="color: white;" for="post">
+                        POST
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- Content Box -->
+              <fieldset class="form-group">
+                <div class="row">
+                  <legend class="col-form-label col-sm-2 pt-0" style="color: white;">Content Type:</legend>
+                  <div class="col-sm-10">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios2" id="jsonRadio" value="option1" checked>
+                      <label style="color: white;" class="form-check-label" for="jsonRadio">
+                        JSON
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input  class="form-check-input" type="radio" name="gridRadios2" id="customRadio" value="option2">
+                      <label style="color: white;" class="form-check-label" for="customRadio">
+                        Custom Paramters
+                      </label>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- Parameters Box - > It will show accordingly -->
+            <div id="param-box">
+                <form class="mx-4 my-4">
+                    <label for="exampleInputEmail1" style="color: white;">Parameters: </label>
+                    <div class="row" id="keyValueContainer">
+                      <div class="col" >
+                        <input type="text" id="param-key" class="form-control" placeholder="Key">
+                      </div>
+                      <div class="col">
+                        <input type="text" id="param-value" class="form-control"  placeholder="Value">
+                      </div>
+                      <button class="btn" id="addKeyValueBtn" style="background-color: orange;">+</button>
+                    </div>
+                </form>     
+            </div>
+            <div id="addedParams">
+
+            </div>
+            <!-- Json Parameter Box -->
+            <div class="form-group my-2 mx-4" id="jsonReqBox">
+                <label for="exampleFormControlTextarea1" style="color: white;">Request JSON: </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+              <!-- Submit Button which will trigger fetch api -->
+                <div class="mx-4 my-4">
+                  <Button id="submit" class="btn" style="background-color: orange;">Submit</Button>
+                </div>
+                <!-- Response Box -->
+                <div id="responseBox">
+                    <div class="form-group mx-4">
+                        <label for="exampleFormControlTextarea1" style="color: white;">Response: </label>
+                        <textarea id="resTextArea" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                </div>
+
+        </div>
+        
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
